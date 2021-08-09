@@ -74,7 +74,11 @@ def get_pricing_data():
     failures = []
     counter = 0
     for ticker in tickersList:
-        data.append(yf.download(ticker).reset_index())
+        data.append(
+            yf.download(
+                tickers=ticker, start="1980-01-01", actions=True, threads=3
+            ).reset_index()
+        )
         counter += 1
         print(counter)
     return data
