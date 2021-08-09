@@ -76,12 +76,13 @@ def get_pricing_data():
     for ticker in tickersList:
         data.append(
             yf.download(
-                tickers=ticker, start="1980-01-01", actions=True, threads=3
+                tickers=ticker, start=str("1960-01-01"), actions=True, threads=3
             ).reset_index()
         )
+        # failures.append(yf.shared._ERRORS.keys())
         counter += 1
         print(counter)
     return data
 
 
-get_pricing_data()
+a = get_pricing_data()
