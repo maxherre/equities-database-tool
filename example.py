@@ -1,9 +1,5 @@
-import pycountry
+import yfinance as yf
 
-code = "AU"
-
-country = pycountry.countries.get(alpha_2=code)
-currency = pycountry.currencies.get(numeric=country.numeric)
-currency_code = currency.alpha_3
-print(country)
-print(currency)
+aapl = yf.Ticker("MSFT")
+info = aapl.get_info("sector")
+print(info)
