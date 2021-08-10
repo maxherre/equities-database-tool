@@ -25,7 +25,7 @@ $ git clone https://github.com/maxisui/nyseportfolio.git
 
 Either way, once downloaded you should run the `setup.py` first to make sure you have all relevant dependencies installed on your machine or in your virtual environment.
 
-**IMPORTANT**
+**IMPORTANT:**
 Before running the `price_data_db.py` script you need to create two PostgreSQL databases and save both connection strings to environment variables called `POSTGRES_DB_EQUITIES` and `POSTGRES_DB_EQUITIES_PRICEDATA`. The connection strings should look like this: `postgresql+psycopg2://username:password@server/equities_pricedata` for the equities database and `postgresql+psycopg2://username:password@server/equities`. Make sure to replace `username`, `password`, `server` with your own values.
 
 ## Usage
