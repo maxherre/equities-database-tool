@@ -1,3 +1,4 @@
+# pice_data_db.py
 import datetime
 import os
 
@@ -109,9 +110,13 @@ def download_and_tosql_equities_pricingdata():
         except Exception as e:
             print(e)
     missing = missing.append(list(yf.shared._ERRORS.keys()))
-    missing.to_csv("missing.csv")
     print(
         "{} tickers could not be downloaded and were saved to the file 'missing.csv' in the project folder".format(
             len(missing)
         )
     )
+    missing.to_csv("missing.csv")
+
+
+tosql_equities_data()
+download_and_tosql_equities_pricingdata()
