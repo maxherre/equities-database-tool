@@ -2,7 +2,7 @@
 
 ## Table of Content
 
-- [overview](#overview)
+- [Overview](#overview)
 - [Setup](#setup)
 - [Usage](#usage)
 - [Outlook](#outlook)
