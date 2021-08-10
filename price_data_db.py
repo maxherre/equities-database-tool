@@ -110,6 +110,8 @@ def download_and_tosql_equities_pricingdata():
             print(e)
     missing = missing.append(list(yf.shared._ERRORS.keys()))
     missing.to_csv("missing.csv")
-
-
-download_and_tosql_equities_pricingdata()
+    print(
+        "{} tickers could not be downloaded and were saved to the file 'missing.csv' in the project folder".format(
+            len(missing)
+        )
+    )
