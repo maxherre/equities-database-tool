@@ -1,4 +1,5 @@
-venv_nyseportfolio
+venv_equities_database_project
 .vscode
 yfinance.cache
 missing.csv
+.pytest_cache
