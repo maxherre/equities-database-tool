@@ -1,9 +1,14 @@
+import datetime
 import sqlite3
 
+import investpy
 import pandas as pd
 import sqlalchemy
-import yfinance as yf
+from requests.api import get
 from sqlalchemy.sql.expression import table
+
+equity_database = str("equities.db")
+equities_price_database = str("equities_price.db")
 
 
 def load_data_from_csv():
@@ -35,16 +40,14 @@ def load_data_from_csv():
     return exchange_data
 
 
-def create_connection():
+def create_connection(name):
     conn = None
-    conn = sqlalchemy.create_engine(
-        "sqlite:///C:/Users/maxhe/Documents/GitHub/nyseportfolio/equities.db"
-    )
+    conn = sqlalchemy.create_engine("sqlite:///" + name)
     return conn
 
 
 def upload_data_to_db():
-    conn = create_connection()
+    conn = create_connection(equity_database)
     data = load_data_from_csv()
     data[
         [
@@ -61,28 +64,46 @@ def upload_data_to_db():
     print("Data successfully saved to database!")
 
 
-def download_data_to_df():
-    conn = create_connection()
-    data = pd.read_sql_table(table_name="company_info", con=conn)
+def download_data_to_df(database_name, table_name):
+    data = pd.read_sql_table(
+        table_name=table_name, con=create_connection(database_name)
+    )
     return data
 
 
-def get_pricing_data():
+def download_and_store_pricing_data():
+    with open("logfile.txt", "w") as log:
 
-    tickersList = download_data_to_df()["Symbol"].to_list()
-    data = []
-    failures = []
-    counter = 0
-    for ticker in tickersList:
-        data.append(
-            yf.download(
-                tickers=ticker, start=str("1960-01-01"), actions=True, threads=3
-            ).reset_index()
-        )
-        # failures.append(yf.shared._ERRORS.keys())
-        counter += 1
-        print(counter)
-    return data
+        try:
+            tickersList = download_data_to_df(
+                database_name=equity_database, table_name="company_info"
+            )["Symbol"].to_list()
+
+            countryList = download_data_to_df(
+                database_name=equity_database, table_name="company_info"
+            )["Country"].to_list()
+
+            conn = create_connection(equities_price_database)
+            date = "{}/{}/{}".format(
+                datetime.date.today().day,
+                datetime.date.today().month,
+                datetime.date.today().year,
+            )
+
+            counter = 0
+            for ticker in tickersList:
+                frame = investpy.get_stock_historical_data(
+                    stock=ticker, from_date="01/01/1980", to_date=date
+                ).reset_index(drop=False, inplace=True)
+
+                frame[
+                    ["Date", "Open", "High", "Low", "Close", "Volume", "Currency"]
+                ].to_sql(ticker, conn, if_exists="replace", index=False)
+                counter += 1
+                print(counter)
+        except Exception as e:
+            log.write("Failed to download {0}: {1}\n".format(str(ticker), str(e)))
+            pass
 
 
-a = get_pricing_data()
+download_and_store_pricing_data()
