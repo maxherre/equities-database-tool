@@ -93,25 +93,23 @@ def download_and_tosql_equities_pricingdata():
     )["Symbol"].to_list()
 
     conn = create_connection(database_name="equities_pricedata")
-    startdate = "1980-01-01"
-    enddate = datetime.date.today()
-    failures = []
+
+    missing = pd.DataFrame()
     counter = 0
     for ticker in tickersList:
         try:
             frame = yf.Ticker(ticker, session=session).history(
-                start=startdate, end=enddate, interval="1d"
+                period="max", interval="1d"
             )
             frame.reset_index(drop=False, inplace=True)
             frame["last_update"] = datetime.date.today()
             frame.to_sql(ticker, conn, if_exists="replace", index=False)
-
             counter += 1
             print(counter)
         except Exception as e:
-            failures.append(e)
-            failures = pd.DataFrame(data=failures)
-            failures.to_csv("failures.csv")
+            print(e)
+    missing = missing.append(list(yf.shared._ERRORS.keys()))
+    missing.to_csv("missing.csv")
 
 
 download_and_tosql_equities_pricingdata()
