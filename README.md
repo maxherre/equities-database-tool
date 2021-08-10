@@ -30,7 +30,7 @@ Before running the `price_data_db.py` script you need to create two PostgreSQL d
 
 ## Usage
 
-Once setup is complete, using the script is very straight forward. Just execute the `price_data_db.py` script and let it run. In total the equities database will contain ca. 7545 ticker symbols and typically around 840 tickers will fail to download any data. All failed tickers will be saved to a `missing.csv` file in the project directory. **Keep in mind that it takes ca. 2.5 hours to run the script**
+Once setup is complete, using the script is very straight forward. Just execute the `price_data_db.py` script and let it run. In total the equities database will contain ca. 7545 ticker symbols and typically around 840 tickers will fail to download any data. All failed tickers will be saved to a `missing.csv` file in the project directory. **Keep in mind that it takes ca. 2.5 hours to run the script !!!**
 
 ## Outlook
 
