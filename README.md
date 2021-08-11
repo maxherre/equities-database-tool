@@ -11,8 +11,8 @@
 Current Version: **0.0.1**
 
 The purpose of this tool is to download and store daily price data for all tickers on the **NYSE** and **NASDAQ**.
-While there are many free APIs available to source this data from, these approaches are always reliant on a working internet connection and limited by whatever criteria the API provider has set. This can result in unavailable data or slow connectivity, which slows down the entire process downstream.
-With this tool the user can build their own database and store as much data as needed.
+While there are many free APIs available to source this data from, these approaches are always reliant on a working internet connection and limited by whatever criteria the API provider has set. This can result in unavailable data or slow connectivity.
+With this tool you can build your own database and store as much data as needed from as many sources as you'd like. For free :)
 
 ## Setup and Usage
 
