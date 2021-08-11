@@ -43,4 +43,18 @@ Here are some ideas I have for future functionality:
 
 3. create new databases with higher resolution data i.e intraday.
 
-4. integration into a cloud platform (probably Microsoft Azure)
+4. currently the tickers are imported from .csv files. I like to change that to fetch the tickers directly from some web source.
+
+5. integration into a cloud platform (probably Microsoft Azure)
+
+## Credit
+
+I'd like to thank Alex Reed and Stuart Jamieson for providing excellent python/finance educational content for free to the world. Their work inspired this project and has taught me a ton. Go check them out!
+
+**Alex:**
+linkedin.com/in/alex-reed
+github.com/areed1192
+
+**Stuart:**
+linkedin.com/in/stuart-jamieson
+github.com/Stuj79
