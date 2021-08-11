@@ -24,7 +24,7 @@ $ git clone https://github.com/maxisui/equities-database-tool.git
 
 2. Either way, once downloaded you should run the `setup.py` first to make sure you have all relevant dependencies installed on your machine or in your virtual environment.
 
-3. Create the two PostgreSQL databases: `equities` and `equities_pricedata`.
+3. Create the two PostgreSQL databases: `equities` and `equities_pricedata`. These are just plain standard databases, not special configuration required.
 
 4. Save the connection strings for each database in environment variables: `POSTGRES_DB_EQUITIES` and `POSTGRES_DB_EQUITIES_PRICEDATA`. The connection strings should look like this:
    `postgresql+psycopg2://username:password@server/equities_pricedata` or this `postgresql+psycopg2://username:password@server/equities` depending on the database in question. Make sure to replace `username`, `password`, `server` with your own values.
@@ -35,14 +35,12 @@ $ git clone https://github.com/maxisui/equities-database-tool.git
 
 ## Outlook
 
-Here are some ideas I have had for future functionality:
+Here are some ideas I have for future functionality:
 
 1. adding data from some european exchanges in the future.
 
-2. adding an updater function to get more recent data added to existing databases.
+2. adding an updater function to get more recent data added to existing tickers.
 
-3. create a new database with higher resolution data i.e intraday.
+3. create new databases with higher resolution data i.e intraday.
 
-4.
-
-5.
+4. integration into a cloud platform (probably Microsoft Azure)
