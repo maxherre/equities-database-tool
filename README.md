@@ -52,9 +52,9 @@ Here are some ideas I have for future functionality:
 I'd like to thank Alex Reed and Stuart Jamieson for providing excellent python/finance educational content for free to the world. Their work inspired this project and has taught me a ton. Go check them out!
 
 **Alex:**
-linkedin.com/in/alex-reed
-github.com/areed1192
+[LinkedIn](https://www.linkedin.com/in/alex-reed)
+[GitHub](https://github.com/areed1192)
 
 **Stuart:**
-linkedin.com/in/stuart-jamieson
-github.com/Stuj79
+[LinkedIn](https://www.linkedin.com/in/stuart-jamieson)
+[GitHub](https://github.com/Stuj79)
