@@ -3,8 +3,7 @@
 ## Table of Content
 
 - [Overview](#overview)
-- [Setup](#setup)
-- [Usage](#usage)
+- [Setup and Usage](#setupandusage)
 - [Outlook](#outlook)
 
 ## Overview
@@ -15,23 +14,24 @@ The purpose of this tool is to download and store daily price data for all ticke
 While there are many free APIs available to source this data from, these approaches are always reliant on a working internet connection and limited by whatever criteria the API provider has set. This can result in unavailable data or slow connectivity, which slows down the entire process downstream.
 With this tool the user can build their own database and store as much data as needed.
 
-## Setup
+## Setup and Usage
 
-You can either download a .zip fodler of this project and save it to your computer or use the `git clone` command in Git Bash.
+1. You can either download a .zip folder of this project and save it to your computer or use the `git clone` command in Git Bash.
 
 ```console
 $ git clone https://github.com/maxisui/nyseportfolio.git
 ```
 
-Either way, once downloaded you should run the `setup.py` first to make sure you have all relevant dependencies installed on your machine or in your virtual environment.
+2. Either way, once downloaded you should run the `setup.py` first to make sure you have all relevant dependencies installed on your machine or in your virtual environment.
 
-**IMPORTANT:**
-Before running the `price_data_db.py` script you need to create two PostgreSQL databases and save both connection strings to environment variables called `POSTGRES_DB_EQUITIES` and `POSTGRES_DB_EQUITIES_PRICEDATA`. The connection strings should look like this: `postgresql+psycopg2://username:password@server/equities_pricedata` for the equities database and `postgresql+psycopg2://username:password@server/equities`. Make sure to replace `username`, `password`, `server` with your own values.
+3. Create the two PostgreSQL databases: `equities` and `equities_pricedata`.
 
-## Usage
+4. Save the connection strings for each database in environment variables: `POSTGRES_DB_EQUITIES` and `POSTGRES_DB_EQUITIES_PRICEDATA`. The connection string should look like this:
+   `postgresql+psycopg2://username:password@server/equities_pricedata` or this `postgresql+psycopg2://username:password@server/equities` depending on the database in question. Make sure to replace `username`, `password`, `server` with your own values.
 
-Once setup is complete, using the script is very straight forward. Just execute the `price_data_db.py` script and let it run. In total the equities database will contain ca. 7545 ticker symbols and typically around 840 tickers will fail to download any data. All failed tickers will be saved to a `missing.csv` file in the project directory.
-**Keep in mind that it takes ca. 2.5 hours to run the script !!!**
+5. Now you can execute the `price_data_db.py` scipt. The `equities` database will contain around 7550 tickers of which ca. 840 tickers will fail to download any data from Yahoo Finance. These failed tickers will be saved to a `missing.csv` file in the project folder.
+
+6. **IMPORTANT** It takes around 2-3 hours for the script to complete. The terminal should give you an indication during the process how far along you are, but don't be in a hurry. :)
 
 ## Outlook
 
@@ -41,4 +41,8 @@ Here are some ideas I have had for future functionality:
 
 2. adding an updater function to get more recent data added to existing databases.
 
-3. create a new database with higher resolution data.
+3. create a new database with higher resolution data i.e intraday.
+
+4.
+
+5.
