@@ -43,6 +43,7 @@ Here are some ideas I have for future functionality:
 5. create new databases with higher resolution data i.e intraday.
 6. currently the tickers are imported from .csv files. I like to change that to fetch the tickers directly from some web source.
 7. integration into a cloud platform (probably Microsoft Azure)
+8. a proper wiki 
 
 ## Credit
 
