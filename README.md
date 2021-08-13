@@ -37,15 +37,12 @@ $ git clone https://github.com/maxisui/equities-database-tool.git
 
 Here are some ideas I have for future functionality:
 
-1. adding data from some european exchanges in the future.
-
-2. adding an updater function to get more recent data added to existing tickers.
-
-3. create new databases with higher resolution data i.e intraday.
-
-4. currently the tickers are imported from .csv files. I like to change that to fetch the tickers directly from some web source.
-
-5. integration into a cloud platform (probably Microsoft Azure)
+1. adding more data from some (european) exchanges.
+2. adding an updater function to update existing tickers.
+3. asynchronous data loading and storing.
+5. create new databases with higher resolution data i.e intraday.
+6. currently the tickers are imported from .csv files. I like to change that to fetch the tickers directly from some web source.
+7. integration into a cloud platform (probably Microsoft Azure)
 
 ## Credit
 
