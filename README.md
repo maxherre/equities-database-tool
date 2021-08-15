@@ -19,7 +19,7 @@ With this tool you can build your own database and store as much data as needed 
 1. You can either download a .zip folder of this project and save it to your computer or use the `git clone` command in Git Bash.
 
 ```console
-$ git clone https://github.com/maxisui/equities-database-tool.git
+$ git clone https://github.com/maxherre/equities-database-tool.git
 ```
 
 2. Either way, once downloaded you should run the `setup.py` first to make sure you have all relevant dependencies installed on your machine or in your virtual environment.
