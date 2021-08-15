@@ -56,5 +56,3 @@ I'd like to thank Alex Reed and Stuart Jamieson for providing excellent python/f
 **Stuart:**
 [LinkedIn](https://www.linkedin.com/in/stuart-jamieson)
 [GitHub](https://github.com/Stuj79)
-
-checking
