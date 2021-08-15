@@ -40,10 +40,10 @@ Here are some ideas I have for future functionality:
 1. adding more data from some (european) exchanges.
 2. adding an updater function to update existing tickers.
 3. asynchronous data loading and storing.
-5. create new databases with higher resolution data i.e intraday.
-6. currently the tickers are imported from .csv files. I like to change that to fetch the tickers directly from some web source.
-7. integration into a cloud platform (probably Microsoft Azure)
-8. a proper wiki 
+4. create new databases with higher resolution data i.e intraday.
+5. currently the tickers are imported from .csv files. I like to change that to fetch the tickers directly from some web source.
+6. integration into a cloud platform (probably Microsoft Azure)
+7. a proper wiki
 
 ## Credit
 
@@ -56,3 +56,5 @@ I'd like to thank Alex Reed and Stuart Jamieson for providing excellent python/f
 **Stuart:**
 [LinkedIn](https://www.linkedin.com/in/stuart-jamieson)
 [GitHub](https://github.com/Stuj79)
+
+checking
