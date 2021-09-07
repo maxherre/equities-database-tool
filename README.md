@@ -24,7 +24,7 @@ $ git clone https://github.com/maxherre/equities-database-tool.git
 
 2. Either way, once downloaded you should run the `setup.py` first to make sure you have all relevant dependencies installed on your machine or in your virtual environment.
 
-3. Create the two PostgreSQL databases: `equities` and `equities_pricedata`. These are just plain standard databases, not special configuration required.
+3. Create the two PostgreSQL databases: `equities` and `equities_pricedata`. These are just plain vanilla databases, no special configuration required.
 
 4. Save the connection strings for each database in environment variables: `POSTGRES_DB_EQUITIES` and `POSTGRES_DB_EQUITIES_PRICEDATA`. The connection strings should look like this:
    `postgresql+psycopg2://username:password@server/equities_pricedata` or this `postgresql+psycopg2://username:password@server/equities` depending on the database in question. Make sure to replace `username`, `password`, `server` with your own values.
