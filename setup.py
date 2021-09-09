@@ -28,7 +28,7 @@ setup(
     long_description_content_type="text/markdown",
 
     #GitHub URL
-    url='https://github.com/maxisui/nyseportfolio',
+    url='https://github.com/maxherre/equities-database-tool',
     
     #requirements
     install_requires=[
